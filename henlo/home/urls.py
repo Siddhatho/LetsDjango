@@ -2,6 +2,10 @@ from django.contrib import admin
 from django.urls import path
 from home import views
 
+admin.site.site_header = "Sid's Perumo Admin"
+admin.site.site_title = "Sid's Perumo Admin Portal"
+admin.site.index_title = "Welcome to Sid's Perumo Admin Portal"
+
 urlpatterns = [
     path("", views.index, name='home'),
     path("about/", views.about, name='about'),
