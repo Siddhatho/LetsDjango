@@ -2,6 +2,33 @@
 
 {% block title %}Contact{% endblock title %}
 
-{% block body %} This is contact body block
+{% block body %}
+
+<div class="container-fluid px-0 mb-3">
+    <img src="https://picsum.photos/1200/400?blur" class="d-block w-100" alt="..." />
+</div>
+
+<div class="container py-4 mb-3">
+    <h2 class="text-center"> Contact us</h2>
+    <form method="post" action="/contact" >
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Tell me about your experience with our product</label>
+            <textarea class="form-control" id="desc" rows="3" name="desc" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+</div>
 
 {% endblock body %}
